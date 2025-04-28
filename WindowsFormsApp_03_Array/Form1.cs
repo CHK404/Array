@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -88,7 +89,16 @@ namespace WindowsFormsApp_03_Array
 
             int[][] jaggedArray = new int[6][];
             //행은 6으로 고정, 열의 길이는 자유
-            
+            jaggedArray[0] = new int[4] { 1, 2, 3, 4 }; //첫 번째 줄: 4개
+            jaggedArray[1] = new int[3] { 1, 2, 3 }; //두 번째 줄: 3개
+
+            //Q1)
+            string[][] classArray = new string[3][];
+            classArray[0] = new string[2] { "Ethan", "Sophia" };
+            classArray[1] = new string[3] { "Liam", "Olivia", "Mason" };
+            classArray[2] = new string[1] { "Ava" };
+
+            textBox1.Text = "1반 학생 목록\r\n" + classArray[0][0] + "\r\n" + classArray[0][1] + "\r\n" + "2반 학생 목록\r\n" + classArray[1][0] + "\r\n" + classArray[1][1] + "\r\n" + classArray[1][2] + "\r\n" + "3반 학생 목록\r\n" + classArray[2][0] + "\r\n";
         }
     }
 }
