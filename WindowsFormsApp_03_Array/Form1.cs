@@ -102,7 +102,7 @@ namespace WindowsFormsApp_03_Array
 
             //실습) 문자열 및 배열
             string[] exArray= new string[10];
-            string KS = "동해물과 백두산이";
+            string KS = "동해 물과 백두산이";
             exArray[0] = KS.IndexOf("백두산").ToString();
             string To = "토요일에 먹는 토마토";
             exArray[1] = To.LastIndexOf("토").ToString();
@@ -115,15 +115,92 @@ namespace WindowsFormsApp_03_Array
             string hung = "오늘은 왠지 더 배고프다";
             exArray[5] = hung.Remove(6, 2);
             string info = "이름, 나이, 전화번호";
-            exArray[6] = info.Split(',')[0];
-            exArray[7] = info.Split(',')[1];
-            exArray[8] = info.Split(',')[2];
+            //Trim() = 앞 뒤 공백 제거
+            exArray[6] = info.Split(',')[0].Trim();
+            exArray[7] = info.Split(',')[1].Trim();
+            exArray[8] = info.Split(',')[2].Trim();
             string hK = "우리 나라 만세";
             exArray[9] = hK.Substring(3, 2);
-
+            
             textBox1.Text = exArray[0] + "\r\n" + exArray[1] + "\r\n" + exArray[2] + "\r\n" + exArray[3] + "\r\n" +
                 exArray[4] + "\r\n" + exArray[5] + "\r\n" + exArray[6] + "\r\n" + exArray[7] + "\r\n" +
                 exArray[8] + "\r\n" + exArray[9] + "\r\n";
+
+            //# 2.문자열 내장 메서드
+            //ㄴ string 타입 문자열이 기본적으로 가지고 있는 기능
+
+            //문자열도 string 타입이기 때문에
+            //.을 찍고 다양한 기능 사용 가능
+            //ex1) 문자열 자체에 .찍어서 기능 사용
+            string[] a = "1 2 3".Split(' ');
+            //ex2) 
+            string codingon = "codingon";
+            codingon.Replace("on", "off");
+            //ex3)
+            string q = "string 5";
+            string[] parsed = q.Split(' '); // [string, 5]
+            int count = int.Parse(parsed[1]);
+
+            //#3-1. 함수 실행(사용)
+            int num = 200;
+            int result = Add(100, num);
+
+            textBox1.Text = result.ToString();
+            Nothing();
+
+            //실습. 함수
+            int[] Div(int x, int y)
+            {
+                int[] divide = new int[2];
+                divide[0] = x / y;
+                divide[1] = x % y;
+                return divide;
+            }
+            textBox1.Text = $"{Div(13, 2)[0]}\r\n{Div(13, 2)[1]}\r\n";
+
         }
+        int[] Div(int x, int y)
+        {
+            int[] divide = new int[2];
+            divide[0] = x / y;
+            divide[1] = x % y;
+            return divide;
+        }
+        //#3. 함수
+        //- 특정 작업을 수행하기 위해 독립적으로 설계된 코드 집합
+
+        //구조
+        //- int(자료형): 이 함수가 돌려줄 값(return 값)의 타입
+        //- Add: 함수명
+        //- x, y: parameter
+        //ㄴ 함수 선언 시 함수가 받아야 하는 입력값
+        //ㄴ 함수에 전달되는 외부 데이터
+        //- {} Scope: 코드 실행 범위(유효 범위)
+
+        //용어 정리
+        //- 함수 정의(선언): 함수를 생성
+        //- 함수 호출: 함수를 사용
+
+        //return (반환값)
+        //함수 내부 코드의 최종 반환 값
+        //- 함수 본문에서 최종 결과를 저장하고 돌려주는 키워드
+        //return 키워드를 만나면 함수 실행 중단
+
+        //함수 선언
+        //#1. return 값이 있는 함수
+        int Add(int x, int y)
+        {
+            return x + y;
+        }
+
+        //#2. return 값이 없는 함수
+        //void
+        //- 반환값이 없을 때 사용하는 키워드
+
+        void Nothing()
+        {
+            textBox1.Text += "Nothing";
+        }
+
     }
 }
