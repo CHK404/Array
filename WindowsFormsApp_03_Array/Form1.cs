@@ -221,6 +221,20 @@ namespace WindowsFormsApp_03_Array
                 $"상품 첫 글자 요약: {order[1][1].Substring(0, 1)} / {order[1][2].Substring(0, 1)} / {order[1][3].Substring(0, 1)}\r\n" +
                 $"{order[2][0]}: {order[2][1]} / {order[2][2]} / {order[2][3]}\r\n" +
                 $"상품 첫 글자 요약: {order[2][1].Substring(0, 1)} / {order[2][2].Substring(0, 1)} / {order[2][3].Substring(0, 1)}\r\n";
+
+            //실습 if문
+            bool toF()
+            {
+                Random random = new Random();
+                return random.Next(1, 101) % 2 == 1;
+            }
+            if (toF() == true)
+            {
+                textBox1.Text = "승리\r\n";
+            } else
+            {
+                textBox1.Text = "패배\r\n";
+            }
         }
         //#3. 함수
         //- 특정 작업을 수행하기 위해 독립적으로 설계된 코드 집합
