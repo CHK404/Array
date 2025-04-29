@@ -149,22 +149,15 @@ namespace WindowsFormsApp_03_Array
             Nothing();
 
             //실습. 함수
-            int[] Div(int x, int y)
-            {
-                int[] divide = new int[2];
-                divide[0] = x / y;
-                divide[1] = x % y;
-                return divide;
+            int[] Divide(int x, int y)
+            { 
+                int[] div = new int[2];
+                div[0] = x / y;
+                div[1] = x % y;
+                return div;
             }
-            textBox1.Text = $"{Div(13, 2)[0]}\r\n{Div(13, 2)[1]}\r\n";
+            textBox1.Text = $"{Divide(13, 2)[0]}\r\n{Divide(13, 2)[1]}\r\n";
 
-        }
-        int[] Div(int x, int y)
-        {
-            int[] divide = new int[2];
-            divide[0] = x / y;
-            divide[1] = x % y;
-            return divide;
         }
         //#3. 함수
         //- 특정 작업을 수행하기 위해 독립적으로 설계된 코드 집합
