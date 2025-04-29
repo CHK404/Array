@@ -158,6 +158,20 @@ namespace WindowsFormsApp_03_Array
             }
             textBox1.Text = $"{Divide(13, 2)[0]}\r\n{Divide(13, 2)[1]}\r\n";
 
+            //실습. 문자열
+            string gong = "멈추지 않는 한 얼마나 천천히 가는지는 중요하지 않다. -공자";
+            int dash = gong.IndexOf("-");
+            textBox1.Text = gong.Remove(dash, 3) + "\r\n";
+            int how = gong.IndexOf("얼마나");
+            string[] wArray = new string[3];
+            string part = gong.Substring(how, 11);
+            wArray[0] = part.Split(' ')[0];
+            wArray[1] = part.Split(' ')[1];
+            wArray[2] = part.Split(' ')[2];
+            textBox1.Text += wArray[0] + "\r\n" + wArray[1] + "\r\n" + wArray[2] + "\r\n";
+            int dot = gong.IndexOf(".");
+            string edGong = gong.Remove(dot, 1).Remove(dash-1, 1);
+            textBox1.Text += edGong.Replace(" ", ",");
         }
         //#3. 함수
         //- 특정 작업을 수행하기 위해 독립적으로 설계된 코드 집합
