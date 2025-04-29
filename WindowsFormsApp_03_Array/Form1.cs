@@ -102,7 +102,7 @@ namespace WindowsFormsApp_03_Array
 
             //실습) 문자열 및 배열
             string[] exArray= new string[10];
-            string KS = "동해물과 백두산이";
+            string KS = "동해 물과 백두산이";
             exArray[0] = KS.IndexOf("백두산").ToString();
             string To = "토요일에 먹는 토마토";
             exArray[1] = To.LastIndexOf("토").ToString();
