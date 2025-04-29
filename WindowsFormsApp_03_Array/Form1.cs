@@ -101,7 +101,7 @@ namespace WindowsFormsApp_03_Array
             textBox1.Text = "1반 학생 목록\r\n" + classArray[0][0] + "\r\n" + classArray[0][1] + "\r\n" + "2반 학생 목록\r\n" + classArray[1][0] + "\r\n" + classArray[1][1] + "\r\n" + classArray[1][2] + "\r\n" + "3반 학생 목록\r\n" + classArray[2][0] + "\r\n";
 
             //실습) 문자열 및 배열
-            string[] exArray= new string[10];
+            string[] exArray = new string[10];
             string KS = "동해 물과 백두산이";
             exArray[0] = KS.IndexOf("백두산").ToString();
             string To = "토요일에 먹는 토마토";
@@ -121,7 +121,7 @@ namespace WindowsFormsApp_03_Array
             exArray[8] = info.Split(',')[2].Trim();
             string hK = "우리 나라 만세";
             exArray[9] = hK.Substring(3, 2);
-            
+
             textBox1.Text = exArray[0] + "\r\n" + exArray[1] + "\r\n" + exArray[2] + "\r\n" + exArray[3] + "\r\n" +
                 exArray[4] + "\r\n" + exArray[5] + "\r\n" + exArray[6] + "\r\n" + exArray[7] + "\r\n" +
                 exArray[8] + "\r\n" + exArray[9] + "\r\n";
@@ -150,7 +150,7 @@ namespace WindowsFormsApp_03_Array
 
             //실습. 함수
             int[] Divide(int x, int y)
-            { 
+            {
                 int[] div = new int[2];
                 div[0] = x / y;
                 div[1] = x % y;
@@ -170,8 +170,57 @@ namespace WindowsFormsApp_03_Array
             wArray[2] = part.Split(' ')[2];
             textBox1.Text += wArray[0] + "\r\n" + wArray[1] + "\r\n" + wArray[2] + "\r\n";
             int dot = gong.IndexOf(".");
-            string edGong = gong.Remove(dot, 1).Remove(dash-1, 1);
+            string edGong = gong.Remove(dot, 1).Remove(dash - 1, 1);
             textBox1.Text += edGong.Replace(" ", ",");
+
+            //실습. 과일가게 주문정보 정리
+            string[][] order = new string[3][];
+            order[0] = new string[4] { "홍길동", "포도", "복숭아", "바나나" };
+            order[1] = new string[4] { "아무개", "사과", "수박", "오렌지" };
+            order[2] = new string[4] { "손오공", "바나나", "사과", "오렌지" };
+
+            order[0][1] = (order[0][1] == "바나나") ? "바나나(유기농)" : order[0][1];
+            order[0][1] = (order[0][1].Length > 2) ? order[0][1].Insert(order.Length, "(인기)") : order[0][1];
+            order[0][1] = (order[0][1] == "수박") ? "씨 없는 수박" : order[0][1];
+
+            order[0][2] = (order[0][2] == "바나나") ? "바나나(유기농)" : order[0][2];
+            order[0][2] = (order[0][2].Length > 2) ? order[0][2].Insert(order.Length, "(인기)") : order[0][2];
+            order[0][2] = (order[0][2] == "수박") ? "씨 없는 수박" : order[0][2];
+
+            order[0][3] = (order[0][3] == "바나나") ? "바나나(유기농)" : order[0][3];
+            order[0][3] = (order[0][3].Length > 2) ? order[0][3].Insert(order.Length, "(인기)") : order[0][3];
+            order[0][3] = (order[0][3] == "수박") ? "씨 없는 수박" : order[0][3];
+
+            order[1][1] = (order[1][1] == "바나나") ? "바나나(유기농)" : order[1][1];
+            order[1][1] = (order[1][1].Length > 2) ? order[1][1].Insert(order.Length, "(인기)") : order[1][1];
+            order[1][1] = (order[1][1] == "수박") ? "씨 없는 수박" : order[1][1];
+
+            order[1][2] = (order[1][2] == "바나나") ? "바나나(유기농)" : order[1][2];
+            order[1][2] = (order[1][2].Length > 2) ? order[1][2].Insert(order.Length, "(인기)") : order[1][2];
+            order[1][2] = (order[1][2] == "수박") ? "씨 없는 수박" : order[1][2];
+
+            order[1][3] = (order[1][3] == "바나나") ? "바나나(유기농)" : order[1][3];
+            order[1][3] = (order[1][3].Length > 2) ? order[1][3].Insert(order.Length, "(인기)") : order[1][3];
+            order[1][3] = (order[1][3] == "수박") ? "씨 없는 수박" : order[1][3];
+
+            order[2][1] = (order[2][1] == "바나나") ? "바나나(유기농)" : order[2][1];
+            order[2][1] = (order[2][1].Length > 2) ? order[2][1].Insert(order.Length, "(인기)") : order[2][1];
+            order[2][1] = (order[2][1] == "수박") ? "씨 없는 수박" : order[2][1];
+
+            order[2][2] = (order[2][2] == "바나나") ? "바나나(유기농)" : order[2][2];
+            order[2][2] = (order[2][2].Length > 2) ? order[2][2].Insert(order.Length, "(인기)") : order[2][2];
+            order[2][2] = (order[2][2] == "수박") ? "씨 없는 수박" : order[2][2];
+
+            order[2][3] = (order[2][3] == "바나나") ? "바나나(유기농)" : order[2][3];
+            order[2][3] = (order[2][3].Length > 2) ? order[2][3].Insert(order.Length, "(인기)") : order[2][3];
+            order[2][3] = (order[2][3] == "수박") ? "씨 없는 수박" : order[2][3];
+
+            textBox1.Text = $"{order[0][0]}: {order[0][1]} / {order[0][2]}/ {order[0][3]}\r\n" +
+                $"상품 첫 글자 요약: {order[0][1].Substring(0, 1)} / {order[0][2].Substring(0, 1)} / {order[0][3].Substring(0, 1)}\r\n" +
+                $"{order[1][0]}: {order[1][1]} / {order[1][2]} / {order[1][3]}\r\n" +
+                $"상품 첫 글자 요약: {order[1][1].Substring(0, 1)} / {order[1][2].Substring(0, 1)} / {order[1][3].Substring(0, 1)}\r\n" +
+                $"{order[2][0]}: {order[2][1]} / {order[2][2]} / {order[2][3]}\r\n" +
+                $"상품 첫 글자 요약: {order[2][1].Substring(0, 1)} / {order[2][2].Substring(0, 1)} / {order[2][3].Substring(0, 1)}\r\n";
         }
         //#3. 함수
         //- 특정 작업을 수행하기 위해 독립적으로 설계된 코드 집합
